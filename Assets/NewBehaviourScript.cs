@@ -7,11 +7,11 @@ public class NewBehaviourScript : MonoBehaviour {
 	float rotationSpeed = 100.0f;
 	void Update () {
 		float translation = CrossPlatformInputManager.GetAxis ("Vertical") * speed;
-		float rotation = CrossPlatformInputManager.GetAxis ("Horizontal") * rotationSpeed;
+        float translation1 = CrossPlatformInputManager.GetAxis("Horizontal") * speed;
 
 		translation *= Time.deltaTime;
-		rotation *= Time.deltaTime;
+		translation1 *= Time.deltaTime;
 		transform.Translate (0, 0, translation);
-		transform.Rotate (0, rotation, 0);
+		transform.Translate (translation1,0, 0);
 	}
 }
